@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: #05070f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.loader-box {
+    text-align: center;
+}
+
+.loader {
+    width: 70px;
+    height: 70px;
+    border: 8px solid #1f2937;
+    border-top: 8px solid #4360e6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

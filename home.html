@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+    <nav class="sidebar">
+        <ul>
+            <li class="dropdown">
+                <a id="home" href="#">Home</a>
+                <div class="dropdown-content">
+                    <a href="#">Courses</a>
+                    <a href="#">Dashboard</a>
+                    <a href="#">Results</a>
+                    <a href="#">Concentration Time</a>
+                </div>
+            </li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <nav class="navbar">
+        
+        <a class="brand" id="home" href="#">Study Hub</a>
+        <form class="search-bar" id="searchForm">
+            <button type="submit" class="search-icon" aria-label="Search">&#128269;</button>
+            <input id="searchInput" type="search" placeholder="Search subjects...">
+        </form>
+        <button class="theme-toggle" id="themeToggle" type="button">Light mode</button>
+    </nav>
+
+    <main class="hero">
+        </div>
+
+        <section class="hero-content">
+            <p class="eyebrow">Welcome to our school</p>
+            <h1>Learning starts here</h1>
+            <p>Explore courses, check results, and keep track of your school progress from one calm, modern home page.</p>
+            <a class="hero-button" href="#">View Courses</a>
+            <p class="eyebrow">Welcome back</p>
+            <h1>School Study Hub</h1>
+            <p>Open your subjects, start a focused study session, improve your study routine, and track progress from one place.</p>
+            <div id="div1">
+    <section class="dashboard" aria-label="Study tools">
+        <article class="card" data-title="courses subjects mathematics english science history">
+            <span class="card-icon">01</span>
+            <h2>Courses / Subjects</h2>
+            <p>View Mathematics, English, Science, History, and other subjects you are working on this term.</p>
+            <button type="button">Open Subjects</button>
+        </article>
+        </div1>
+<div id="div2">
+        <article class="card" data-title="focus timer concentration pomodoro study time">
+            <span class="card-icon">02</span>
+            <h2>Focus Timer</h2>
+            <p>Use a 25 minute focus session with short breaks to keep concentration steady.</p>
+            <div class="timer" id="timer">25:00</div>
+            <button type="button" id="timerButton">Start Timer</button>
+        </article>
+        </div>
+<div id="div3">
+        <article class="card" data-title="smart study strategies notes revision planning">
+            <span class="card-icon">03</span>
+            <h2>Smart Study Strategies</h2>
+            <p>Plan revision, summarize notes, test yourself, and review difficult topics first.</p>
+            <button type="button">View Tips</button>
+        </article>
+        </div>
+<div id="div4">
+        <article class="card" data-title="progress tracker marks dashboard results goals">
+            <span class="card-icon">04</span>
+            <h2>Progress Tracker</h2>
+            <p>Track completed lessons, recent marks, and weekly study goals.</p>
+            <progress value="68" max="100"></progress>
+            <button type="button">Check Progress</button>
+        </article>
+    </section>
+</div >
+        </section>
+    </main>
+
+
+</body>
+</html>
+
+<script src="home.js">
+    const home=document.getElementById("home"); 
+    home.addEventListener("click",function(){
+        alert("welcome to home page");
+    });
+    setTimeout(function(){
+        alert("welcome to home page");
+    },5000);
+
+
+</script>
+</html>
