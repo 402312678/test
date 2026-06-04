@@ -1,102 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="home.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Hub — Home</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <nav class="sidebar">
-        <ul>
-            <li class="dropdown">
-                <a id="home" href="#">Home</a>
-                <div class="dropdown-content">
-                    <a href="#">Courses</a>
-                    <a href="#">Dashboard</a>
-                    <a href="#">Results</a>
-                    <a href="#">Concentration Time</a>
-                </div>
-            </li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-    <nav class="navbar">
-        
-        <a class="brand" id="home" href="#">Study Hub</a>
-        <form class="search-bar" id="searchForm">
-            <button type="submit" class="search-icon" aria-label="Search">&#128269;</button>
-            <input id="searchInput" type="search" placeholder="Search subjects...">
-        </form>
-        <button class="theme-toggle" id="themeToggle" type="button">Light mode</button>
-    </nav>
-
-    <main class="hero">
+ 
+  <!-- Animated background -->
+  <div class="box-wave" aria-hidden="true">
+    <span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span>
+    <span style="--i:3"></span><span style="--i:4"></span><span style="--i:5"></span>
+    <span style="--i:6"></span><span style="--i:7"></span><span style="--i:8"></span>
+    <span style="--i:9"></span><span style="--i:10"></span><span style="--i:11"></span>
+    <span style="--i:12"></span><span style="--i:13"></span><span style="--i:14"></span>
+    <span style="--i:15"></span><span style="--i:16"></span><span style="--i:17"></span>
+    <span style="--i:18"></span><span style="--i:19"></span><span style="--i:20"></span>
+    <span style="--i:21"></span><span style="--i:22"></span><span style="--i:23"></span>
+  </div>
+ 
+  <!-- Hamburger (mobile) -->
+  <button class="hamburger" id="hamburger" aria-label="Toggle sidebar">
+    <span></span><span></span><span></span>
+  </button>
+ 
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-logo">📚</span>
+      <h2>Study Hub</h2>
+      <button class="close-btn" id="closeSidebar" aria-label="Close sidebar">✕</button>
+    </div>
+    <ul class="sidebar-menu">
+      <li><a href="home.html" class="sidebar-link active"><span class="icon">🏠</span> Home</a></li>
+      <li><a href="#dashboard" class="sidebar-link"><span class="icon">📊</span> Dashboard</a></li>
+      <li><a href="#timer-card" class="sidebar-link"><span class="icon">⏱️</span> Focus Timer</a></li>
+      <li><a href="#subjects-card" class="sidebar-link"><span class="icon">📚</span> Subjects</a></li>
+      <li><a href="#quiz-card" class="sidebar-link"><span class="icon">❓</span> Quizzes</a></li>
+      <li><a href="#progress-card" class="sidebar-link"><span class="icon">📈</span> Progress</a></li>
+      <li><a href="#strategy-card" class="sidebar-link"><span class="icon">🧠</span> Study Tips</a></li>
+    </ul>
+    <div class="sidebar-footer">
+      <div class="user-info">
+        <div class="avatar">A</div>
+        <div>
+          <div class="user-name">Alex Student</div>
+          <div class="user-grade">Grade 11</div>
         </div>
-
-        <section class="hero-content">
-            <p class="eyebrow">Welcome to our school</p>
-            <h1>Learning starts here</h1>
-            <p>Explore courses, check results, and keep track of your school progress from one calm, modern home page.</p>
-            <a class="hero-button" href="#">View Courses</a>
-            <p class="eyebrow">Welcome back</p>
-            <h1>School Study Hub</h1>
-            <p>Open your subjects, start a focused study session, improve your study routine, and track progress from one place.</p>
-            <div id="div1">
-    <section class="dashboard" aria-label="Study tools">
-        <article class="card" data-title="courses subjects mathematics english science history">
-            <span class="card-icon">01</span>
-            <h2>Courses / Subjects</h2>
-            <p>View Mathematics, English, Science, History, and other subjects you are working on this term.</p>
-            <button type="button">Open Subjects</button>
-        </article>
-        </div1>
-<div id="div2">
-        <article class="card" data-title="focus timer concentration pomodoro study time">
-            <span class="card-icon">02</span>
-            <h2>Focus Timer</h2>
-            <p>Use a 25 minute focus session with short breaks to keep concentration steady.</p>
-            <div class="timer" id="timer">25:00</div>
-            <button type="button" id="timerButton">Start Timer</button>
-        </article>
+      </div>
+      <button class="theme-toggle-sidebar" id="themeToggleSidebar" type="button">🌙 Dark Mode</button>
+      <a href="login.html" class="logout-btn">⬅ Sign Out</a>
+    </div>
+  </nav>
+ 
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <a class="brand" href="home.html">📚 Study Hub</a>
+    <form class="search-bar" id="searchForm" onsubmit="return false;">
+      <button type="submit" class="search-icon" aria-label="Search">🔍</button>
+      <input id="searchInput" type="search" placeholder="Search subjects, topics...">
+    </form>
+    <div class="nav-actions">
+      <span class="streak-badge">🔥 5 day streak</span>
+      <button class="theme-toggle" id="themeToggle" type="button">☀️ Light</button>
+    </div>
+  </nav>
+ 
+  <!-- Main content -->
+  <main class="main-content">
+ 
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Welcome back, Alex 👋</p>
+        <h1>Ready to study<br><span class="accent-text">smarter today?</span></h1>
+        <p class="hero-sub">Track your concentration, follow your study strategy, take quizzes and watch your marks climb.</p>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">68%</span><span class="stat-label">Overall Progress</span></div>
+          <div class="stat"><span class="stat-num">12h</span><span class="stat-label">Study Time</span></div>
+          <div class="stat"><span class="stat-num">3</span><span class="stat-label">Quizzes Due</span></div>
         </div>
-<div id="div3">
-        <article class="card" data-title="smart study strategies notes revision planning">
-            <span class="card-icon">03</span>
-            <h2>Smart Study Strategies</h2>
-            <p>Plan revision, summarize notes, test yourself, and review difficult topics first.</p>
-            <button type="button">View Tips</button>
-        </article>
-        </div>
-<div id="div4">
-        <article class="card" data-title="progress tracker marks dashboard results goals">
-            <span class="card-icon">04</span>
-            <h2>Progress Tracker</h2>
-            <p>Track completed lessons, recent marks, and weekly study goals.</p>
-            <progress value="68" max="100"></progress>
-            <button type="button">Check Progress</button>
-        </article>
+      </div>
     </section>
-</div >
-        </section>
-    </main>
-
-
+ 
+    <!-- Search results -->
+    <div id="searchResults" class="search-results" style="display:none;"></div>
+ 
+    <!-- Dashboard cards -->
+    <section class="dashboard" id="dashboard" aria-label="Study tools">
+ 
+      <!-- 01 Subjects -->
+      <article class="card" id="subjects-card" data-title="courses subjects mathematics english science history">
+        <div class="card-header">
+          <span class="card-num">01</span>
+          <span class="card-tag">Subjects</span>
+        </div>
+        <h2>Courses &amp; Subjects</h2>
+        <p>Your active subjects this term. Click one to open notes and resources.</p>
+        <div class="subject-list">
+          <div class="subject-chip math">📐 Mathematics <span class="chip-score">72%</span></div>
+          <div class="subject-chip eng">📖 English <span class="chip-score">85%</span></div>
+          <div class="subject-chip sci">🔬 Science <span class="chip-score">61%</span></div>
+          <div class="subject-chip hist">🌍 History <span class="chip-score">78%</span></div>
+        </div>
+        <button type="button" class="card-btn">Open Subjects</button>
+      </article>
+ 
+      <!-- 02 Focus Timer -->
+      <article class="card" id="timer-card" data-title="focus timer concentration pomodoro study time">
+        <div class="card-header">
+          <span class="card-num">02</span>
+          <span class="card-tag">Focus</span>
+        </div>
+        <h2>Focus Timer</h2>
+        <p>25-minute Pomodoro session. Stay focused, then take a break.</p>
+        <div class="timer-ring">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="50"/>
+            <circle class="ring-fill" id="ringFill" cx="60" cy="60" r="50"/>
+          </svg>
+          <div class="timer-center">
+            <div class="timer" id="timer">25:00</div>
+            <div class="timer-label" id="timerLabel">Focus</div>
+          </div>
+        </div>
+        <div class="timer-controls">
+          <button type="button" id="timerButton" class="card-btn">▶ Start</button>
+          <button type="button" id="timerReset" class="card-btn-ghost">↺ Reset</button>
+        </div>
+        <div class="session-count">Sessions today: <strong id="sessionCount">0</strong></div>
+      </article>
+ 
+      <!-- 03 Smart Study Strategy -->
+      <article class="card" id="strategy-card" data-title="smart study strategies notes revision planning">
+        <div class="card-header">
+          <span class="card-num">03</span>
+          <span class="card-tag">Strategy</span>
+        </div>
+        <h2>Smart Study Strategy</h2>
+        <p>Your AI-suggested plan based on your concentration data.</p>
+        <div class="strategy-list">
+          <div class="strategy-item done">✅ Review Science Chapter 4</div>
+          <div class="strategy-item active">⏳ Math: Practice quadratics</div>
+          <div class="strategy-item pending">📖 English: Essay outline</div>
+          <div class="strategy-item pending">🌍 History: Summarise notes</div>
+        </div>
+        <button type="button" class="card-btn">View Full Plan</button>
+      </article>
+ 
+      <!-- 04 Progress Tracker -->
+      <article class="card" id="progress-card" data-title="progress tracker marks dashboard results goals">
+        <div class="card-header">
+          <span class="card-num">04</span>
+          <span class="card-tag">Progress</span>
+        </div>
+        <h2>Progress Tracker</h2>
+        <p>Weekly goals and subject performance at a glance.</p>
+        <div class="progress-bars">
+          <div class="prog-row"><span>Math</span><div class="prog-bar"><div class="prog-fill math-fill" style="width:72%"></div></div><span>72%</span></div>
+          <div class="prog-row"><span>English</span><div class="prog-bar"><div class="prog-fill eng-fill" style="width:85%"></div></div><span>85%</span></div>
+          <div class="prog-row"><span>Science</span><div class="prog-bar"><div class="prog-fill sci-fill" style="width:61%"></div></div><span>61%</span></div>
+          <div class="prog-row"><span>History</span><div class="prog-bar"><div class="prog-fill hist-fill" style="width:78%"></div></div><span>78%</span></div>
+        </div>
+        <button type="button" class="card-btn">Check Progress</button>
+      </article>
+ 
+      <!-- 05 Quiz -->
+      <article class="card" id="quiz-card" data-title="quiz test yourself practice questions">
+        <div class="card-header">
+          <span class="card-num">05</span>
+          <span class="card-tag">Quiz</span>
+        </div>
+        <h2>Quick Quiz</h2>
+        <p>Test yourself on recent topics. Results are tracked per subject.</p>
+        <div class="quiz-preview">
+          <div class="quiz-subject">📐 Math Quiz — 10 questions</div>
+          <div class="quiz-subject">🔬 Science Quiz — 8 questions</div>
+          <div class="quiz-subject new-badge">🆕 History Quiz — 12 questions</div>
+        </div>
+        <button type="button" class="card-btn">Start Quiz</button>
+      </article>
+ 
+      <!-- 06 Concentration Log -->
+      <article class="card" id="conc-card" data-title="concentration log focus data study sessions">
+        <div class="card-header">
+          <span class="card-num">06</span>
+          <span class="card-tag">Concentration</span>
+        </div>
+        <h2>Concentration Log</h2>
+        <p>Your focus patterns this week. Best time: <strong>9–11am</strong></p>
+        <div class="conc-bars">
+          <div class="conc-col"><div class="conc-fill" style="height:60%"></div><span>Mon</span></div>
+          <div class="conc-col"><div class="conc-fill high" style="height:90%"></div><span>Tue</span></div>
+          <div class="conc-col"><div class="conc-fill" style="height:45%"></div><span>Wed</span></div>
+          <div class="conc-col"><div class="conc-fill high" style="height:80%"></div><span>Thu</span></div>
+          <div class="conc-col"><div class="conc-fill" style="height:55%"></div><span>Fri</span></div>
+          <div class="conc-col today"><div class="conc-fill today-fill" style="height:30%"></div><span>Today</span></div>
+        </div>
+        <button type="button" class="card-btn">View Full Log</button>
+      </article>
+ 
+    </section>
+  </main>
+ 
+  <script src="home.js"></script>
 </body>
-</html>
-
-<script src="home.js">
-    const home=document.getElementById("home"); 
-    home.addEventListener("click",function(){
-        alert("welcome to home page");
-    });
-    setTimeout(function(){
-        alert("welcome to home page");
-    },5000);
-
-
-</script>
 </html>

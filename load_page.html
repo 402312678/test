@@ -1,18 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loading</title>
-    <link rel="stylesheet" href="loading.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Hub — Loading</title>
+  <link rel="stylesheet" href="loading.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="loader-box">
-        <div class="loader"></div>
-        <h1>Loading...</h1>
+ 
+  <!-- Bouncing background (same as all pages) -->
+  <div class="box-wave" aria-hidden="true">
+    <span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span>
+    <span style="--i:3"></span><span style="--i:4"></span><span style="--i:5"></span>
+    <span style="--i:6"></span><span style="--i:7"></span><span style="--i:8"></span>
+    <span style="--i:9"></span><span style="--i:10"></span><span style="--i:11"></span>
+    <span style="--i:12"></span><span style="--i:13"></span><span style="--i:14"></span>
+    <span style="--i:15"></span><span style="--i:16"></span><span style="--i:17"></span>
+  </div>
+ 
+  <main class="loader-box">
+ 
+    <!-- Balloon SVG -->
+    <div class="balloon-wrap" id="balloonWrap">
+      <svg id="balloonSvg" viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg">
+ 
+        <!-- String -->
+        <path id="string"
+          d="M100 210 Q92 228 100 245"
+          fill="none" stroke="#94a3b8" stroke-width="2"
+          stroke-linecap="round" opacity="0"/>
+ 
+        <!-- Balloon body -->
+        <ellipse id="balloonBody"
+          cx="100" cy="110"
+          rx="4" ry="5"
+          fill="url(#balloonGrad)"
+          opacity="0"/>
+ 
+        <!-- Shine highlight -->
+        <ellipse id="shine"
+          cx="83" cy="88"
+          rx="0" ry="0"
+          fill="white" opacity="0.35"/>
+ 
+        <!-- Knot at bottom of balloon -->
+        <ellipse id="knot"
+          cx="100" cy="165"
+          rx="0" ry="0"
+          fill="#2563eb" opacity="0"/>
+ 
+        <!-- Pop particles (hidden until pop) -->
+        <g id="particles" opacity="0">
+          <circle cx="100" cy="110" r="4" fill="#60a5fa"/>
+          <circle cx="100" cy="110" r="3" fill="#93c5fd"/>
+          <circle cx="100" cy="110" r="4" fill="#3b82f6"/>
+          <circle cx="100" cy="110" r="3" fill="#bfdbfe"/>
+          <circle cx="100" cy="110" r="4" fill="#60a5fa"/>
+          <circle cx="100" cy="110" r="3" fill="#2563eb"/>
+          <circle cx="100" cy="110" r="4" fill="#93c5fd"/>
+          <circle cx="100" cy="110" r="3" fill="#dbeafe"/>
+        </g>
+ 
+        <defs>
+          <radialGradient id="balloonGrad" cx="38%" cy="35%" r="60%">
+            <stop offset="0%"   stop-color="#60a5fa"/>
+            <stop offset="100%" stop-color="#1d4ed8"/>
+          </radialGradient>
+        </defs>
+      </svg>
+ 
+      <!-- Pop flash -->
+      <div class="pop-flash" id="popFlash"></div>
     </div>
-
-    <script src="loading.js"></script>
+ 
+    <p class="load-text" id="loadText">Getting your study space ready…</p>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+ 
+  </main>
+ 
+  <script src="loading.js"></script>
 </body>
 </html>
